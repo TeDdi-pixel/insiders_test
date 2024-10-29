@@ -14,9 +14,10 @@
 
         --accent: var(--black);
         --background: var(--white);
-        --foreground: 0, 0%, 77%;
-        --bitton: var(--white);
+        --background-foreground: 0, 0%, 75%;
+        --button: var(--white);
         --button-foreground: 0, 0%, 77%;
+        --border: var(var(--black));
     }
 
     /* .dark {} */

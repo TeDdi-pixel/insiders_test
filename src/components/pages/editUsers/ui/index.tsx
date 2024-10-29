@@ -1,3 +1,5 @@
-const EditUserPage = () => <div>Edit user</div>;
+import { DefaultLayout } from "../../../layout";
+
+const EditUserPage = () => <DefaultLayout>Edit user</DefaultLayout>;
 
 export default EditUserPage;

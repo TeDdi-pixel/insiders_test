@@ -1,5 +1,7 @@
+import { DefaultLayout } from "../../../layout";
+
 const UsersPage = () => {
-  return <div>Users</div>;
+  return <DefaultLayout>Users</DefaultLayout>;
 };
 
 export default UsersPage;
