@@ -7,12 +7,13 @@ import { FullNameInput } from "./FullNameInput";
 import FormTitle from "../../../../shared/FormTitle";
 
 export const EditUserForm = () => {
+
   return (
     <>
       <FormTitle text="User Information" />
       <form className="flex flex-col max-w-[1080px] w-full mx-auto gap-y-[40px]">
         <FormItemsWrapper>
-          <FullNameInput name="Oleg Schevchenko" />
+          <FullNameInput />
           <Select id="department" data={departments} label="Departments" />
         </FormItemsWrapper>
         <FormItemsWrapper className="mb-[80px]">

@@ -7,6 +7,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.custom-checkbox {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border: 2px solid #c4c4c4;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .custom-checkbox:checked {
+    background-color: black;
+    border-color: black;
+  }
+  
+  .custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background-image: url('../public/icons/checkbox_arrow.svg');
+    background-size: cover;
+    transform: translate(-50%, -50%);
+  }
+
 @layer base {
     :root {
         --black: 0, 0%, 0%;
