@@ -6,8 +6,8 @@ import statuses from "../../../../data/statuses.json";
 import MultiSelect from "../../../shared/MultiSelect";
 import countries from "../../../../data/counries.json";
 import TrashButton from "./TrashButton";
-import { useUserFormStore } from "../../store";
 import { UserAddForm } from "../../../features/forms/addUser";
+import { useUserFormStore } from "../../../features/forms/addUser/store";
 const UsersPage = () => {
   const [selectedDepartments, setSelectedDepartments] = useState<string[]>([]);
   const { setIsOpened } = useUserFormStore((state) => state);

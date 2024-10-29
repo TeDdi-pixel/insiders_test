@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Controller } from "react-hook-form";
 
 type TypeData = {
   value: string;
@@ -12,7 +13,7 @@ type Props = {
   className?: string;
 };
 
-const Select = ({ id, data, label, className }: Props) => {
+const Select = ({ id, data, label, className, control }: Props) => {
   const [active, setActive] = useState<boolean>(false);
 
   return (
@@ -22,29 +23,37 @@ const Select = ({ id, data, label, className }: Props) => {
       <label htmlFor={id} className="text-accent-foreground">
         {label}
       </label>
-      <select
-        onClick={() => setActive(!active)}
-        id={id}
-        className="max-h-[48px] w-full border py-[14px] pl-6 pr-8 text-accent-foreground rounded-none appearance-none focus:border-blue-500"
-      >
-        {data.map((option) => (
-          <option
+      <Controller
+        name={id}
+        control={control}
+        defaultValue=""
+        render={({ field: { onChange, value, ref } }) => (
+          <select
             onClick={() => setActive(!active)}
-            key={option.name}
-            value={option.value}
-            className="text-accent-foreground"
+            id={id}
+            value={value}
+            ref={ref}
+            onChange={(e) => onChange(e.target.value)}
+            className="max-w-[500px] w-full h-[48px] border py-[14px] pl-6 pr-3 text-accent-foreground rounded-none focus:border-blue-500 focus:rounded-none"
           >
-            {option.name}
-          </option>
-        ))}
-      </select>
-      <img
+            <option value="" disabled>
+              Select {id}
+            </option>
+            {data.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.name}
+              </option>
+            ))}
+          </select>
+        )}
+      />
+      {/* <img
         src="../../../public/icons/arrows.svg"
         alt="arrow-down"
         className={`absolute right-5 top-[48px] transform -translate-y-1/2 pointer-events-none transition-transform ${
           active ? "rotate-180" : ""
         }`}
-      />
+      /> */}
     </div>
   );
 };
