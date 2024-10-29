@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Controller } from "react-hook-form";
+import { useEditFormStore } from "../features/forms/editUser/store";
 
 type TypeData = {
   value: string;
@@ -15,6 +16,7 @@ type Props = {
 
 const Select = ({ id, data, label, className, control }: Props) => {
   const [active, setActive] = useState<boolean>(false);
+  const { setIsInputChanged } = useEditFormStore((state) => state);
 
   return (
     <div
@@ -33,7 +35,18 @@ const Select = ({ id, data, label, className, control }: Props) => {
             id={id}
             value={value}
             ref={ref}
-            onChange={(e) => onChange(e.target.value)}
+            onChange={(e) => {
+              const selectedValue = e.target.value;
+              if (selectedValue !== "") {
+                setIsInputChanged(true);
+                onChange(selectedValue);
+              } else {
+                setIsInputChanged(false);
+                onChange("");
+
+                onChange(selectedValue);
+              }
+            }}
             className="max-w-[500px] w-full h-[48px] border py-[14px] pl-6 pr-3 text-accent-foreground rounded-none focus:border-blue-500 focus:rounded-none"
           >
             <option value="" disabled>
