@@ -14,8 +14,8 @@ export const HeaderButton = ({
     <Link
       to={path}
       onClick={() => setActiveButton(text)}
-      className={`w-[200px] py-3.5 px-[67px] border font-[300] font-default transition-colors ${
-        text === activeButton ? "bg-button-foreground" : "bg-button"
+      className={`w-[200px] py-3.5 px-[67px] border border-border-foreground font-[300] font-default transition-colors ${
+        text === activeButton ? "bg-background" : ""
       }`}
     >
       {text}

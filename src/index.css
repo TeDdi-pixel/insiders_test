@@ -11,14 +11,14 @@
     :root {
         --black: 0, 0%, 0%;
         --white: 0, 0%, 100%;
+        --foreground: 0, 0%, 77%;
 
         --accent: var(--black);
         --accent-foreground: 222, 6%, 39%;
-        --background: var(--white);
-        --background-foreground: 0, 0%, 75%;
-        --button: var(--white);
-        --button-foreground: 0, 0%, 77%;
-        --border: var(var(--black));
+        --background: var(--foreground);
+        --background-foreground: var(--black);
+        --border: var(--black);
+        --border-foreground: 0, 0%, 77%;
     }
 
     /* .dark {} */

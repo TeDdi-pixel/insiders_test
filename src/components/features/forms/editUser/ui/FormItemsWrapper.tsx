@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
-export const FormItemsWrapper = ({ children }: { children: ReactNode }) => {
-  return <div className="flex gap-x-[80px]">{children}</div>;
+type Props = { children: ReactNode; className?: string };
+
+export const FormItemsWrapper = ({ children, className }: Props) => {
+  return <div className={`flex gap-x-[80px] ${className}`}>{children}</div>;
 };

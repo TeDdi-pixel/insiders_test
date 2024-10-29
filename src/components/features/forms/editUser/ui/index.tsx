@@ -8,18 +8,18 @@ import FormTitle from "../../../../shared/FormTitle";
 
 export const EditUserForm = () => {
   return (
-    <div>
+    <>
       <FormTitle text="User Information" />
       <form className="flex flex-col max-w-[1080px] w-full mx-auto gap-y-[40px]">
         <FormItemsWrapper>
-          <FullNameInput />
-          <Select id="Department" data={departments} label="Departments" />
+          <FullNameInput name="Oleg Schevchenko" />
+          <Select id="department" data={departments} label="Departments" />
         </FormItemsWrapper>
-        <FormItemsWrapper>
-          <Select id="Department" data={countries} label="Countries" />
-          <Select id="Department" data={statuses} label="Statuses" />
+        <FormItemsWrapper className="mb-[80px]">
+          <Select id="country" data={countries} label="Countries" />
+          <Select id="status" data={statuses} label="Statuses" />
         </FormItemsWrapper>
       </form>
-    </div>
+    </>
   );
 };

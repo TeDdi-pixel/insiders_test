@@ -8,14 +8,13 @@ export default {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          foreground: "hsl(var(--border-foreground))",
+        },
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
-        },
-        button: {
-          DEFAULT: "hsl(var(--button))",
-          foreground: "hsl(var(--button-foreground))",
         },
         background: {
           DEFAULT: "hsl(var(--background))",

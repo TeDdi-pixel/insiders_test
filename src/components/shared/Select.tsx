@@ -1,25 +1,35 @@
+import { useState } from "react";
+
 type TypeData = {
   value: string;
   name: string;
 };
+
 type Props = {
   id: string;
   data: TypeData[];
   label: string;
+  className?: string;
 };
 
-const Select = ({ id, data, label }: Props) => {
+const Select = ({ id, data, label, className }: Props) => {
+  const [active, setActive] = useState<boolean>(false);
+
   return (
-    <div className="flex flex-col gap-1 w-full">
+    <div
+      className={`flex flex-col gap-1 w-full relative max-w-[500px] ${className}`}
+    >
       <label htmlFor={id} className="text-accent-foreground">
         {label}
       </label>
       <select
+        onClick={() => setActive(!active)}
         id={id}
-        className="max-w-[500px] h-[48px] border py-[14px] pl-6 pr-3 text-accent-foreground rounded-none focus:border-blue-500  focus:rounded-none"
+        className="max-h-[48px] w-full border py-[14px] pl-6 pr-8 text-accent-foreground rounded-none appearance-none focus:border-blue-500"
       >
         {data.map((option) => (
           <option
+            onClick={() => setActive(!active)}
             key={option.name}
             value={option.value}
             className="text-accent-foreground"
@@ -28,6 +38,13 @@ const Select = ({ id, data, label }: Props) => {
           </option>
         ))}
       </select>
+      <img
+        src="../../../public/icons/arrows.svg"
+        alt="arrow-down"
+        className={`absolute right-5 top-[48px] transform -translate-y-1/2 pointer-events-none transition-transform ${
+          active ? "rotate-180" : ""
+        }`}
+      />
     </div>
   );
 };
