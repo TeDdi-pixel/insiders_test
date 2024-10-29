@@ -1,11 +1,7 @@
+import AppRouter from "./router";
 
 function App() {
-
-  return (
-    <div className="font-default font-[300]">
-      Hello
-    </div>
-  )
+  return <AppRouter />;
 }
 
-export default App
+export default App;
