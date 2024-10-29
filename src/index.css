@@ -13,6 +13,7 @@
         --white: 0, 0%, 100%;
 
         --accent: var(--black);
+        --accent-foreground: 222, 6%, 39%;
         --background: var(--white);
         --background-foreground: 0, 0%, 75%;
         --button: var(--white);
