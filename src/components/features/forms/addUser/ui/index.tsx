@@ -23,7 +23,7 @@ export const UserAddForm = () => {
 
   return (
     <div
-      className={`w-full h-[100vh] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center bg-[#7D7D7D80] bg-opacity-50 ${
+      className={`w-full h-full fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center bg-[#7D7D7D80] bg-opacity-50 ${
         isOpened ? "z-50 opacity-100 h-auto" : "-z-50 opacity-0 h-0"
       }`}
     >
